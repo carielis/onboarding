@@ -1,0 +1,55 @@
+.root {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-height: 100vh;
+}
+.leftSide {
+  display: flex;
+  flex: 1;
+}
+.rightSide {
+  width: 600px;
+  display: flex;
+  padding: 90px;
+  flex-direction: column;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.input {
+  width: 328px;
+  padding: 13px 16px;
+  background: #ffffff;
+  border: 1px solid #d5d9dc;
+  border-radius: 6px;
+  outline: none;
+  color: black;
+}
+.recoverPassword {
+  position: relative;
+  height: 18px;
+  right: -230px;
+  top: -14px;
+  width: 100px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 16px;
+  width: 328px;
+  height: 49px;
+  background: #fa4616;
+  border-radius: 6px;
+  outline: none;
+  border-style: none;
+}

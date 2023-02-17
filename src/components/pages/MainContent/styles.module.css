@@ -1,0 +1,64 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 12px 0px 12px;
+  max-height: 53vh;
+  overflow: auto;
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  width: 100vw;
+}
+
+.menuLabel {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #787878;
+  padding-left: 12px;
+}
+
+.appContainer {
+  display: flex;
+  gap: 11px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameOnboarding {
+  width: 184px;
+  height: 142px;
+
+  /* Background/secondary color */
+
+  background: #f2f2f2;
+  border-radius: 12px;
+  margin-left: 12px;
+}
+
+.theme {
+  position: absolute;
+  width: 232px;
+  height: 59px;
+  left: 0px;
+  bottom: 0px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.themeName {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}

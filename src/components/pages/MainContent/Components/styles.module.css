@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 12px;
+  gap: 12px;
+
+  width: 204px;
+  height: 36px;
+
+  /* Core/primary color */
+
+  border-radius: 32px;
+  outline: none;
+  border-style: none;
+  color: black;
+  align-items: center;
+  background-color: #ffffff00;
+  color: #787878;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* Text/secondary color */
+
+  color: #787878;
+}
+.button:hover {
+  background: #8d64d8a1;
+  box-shadow: 0px 4px 24px rgba(140, 100, 216, 0.48);
+  outline: none;
+  border-style: none;
+  color: #ffffff;
+}
+.activeBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 12px;
+  gap: 12px;
+
+  width: 204px;
+  height: 36px;
+  outline: none;
+  border-style: none;
+  /* Core/primary color */
+
+  border-radius: 32px;
+  outline: none;
+  background: #8d64d8a1;
+  box-shadow: 0px 4px 24px rgba(140, 100, 216, 0.48);
+  align-items: center;
+  color: #ffffff;
+}
