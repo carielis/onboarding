@@ -1,0 +1,46 @@
+.card {
+  width: 376px;
+  height: 96px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.userPic {
+  background-image: url("./image.png");
+  width: 64px;
+  height: 64px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 32px;
+}
+
+.nameUser {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.phoneMail {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Core/primary color */
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #8c64d8;
+}
+
+.container {
+}

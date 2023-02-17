@@ -110,6 +110,10 @@
 }
 
 .checkbox {
+  width: 14px;
+  height: 14px;
+  padding: 0px;
+  margin: 0px 12px 0px 0px;
 }
 .checkbox:checked {
 }

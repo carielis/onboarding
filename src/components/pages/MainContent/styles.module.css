@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 7px;
   padding: 16px 12px 0px 12px;
-  max-height: 47.9vh;
+  max-height: calc(100vh - 391px);
   overflow-x: hidden;
 }
 .wrapper {
@@ -77,7 +77,7 @@
   background: #8c64d8;
   box-shadow: 0px 1px 8px rgb(140 100 216 / 42%);
   border-radius: 32px;
-  animation: Light 1s ease-in-out;
+  animation: Light 0.3s ease-in-out;
   user-select: none;
 }
 .selectDark {
@@ -89,7 +89,7 @@
   background: #8c64d8;
   box-shadow: 0px 1px 8px rgb(140 100 216 / 42%);
   border-radius: 32px;
-  animation: Dark 1s ease-in-out;
+  animation: Dark 0.3s ease-in-out;
   user-select: none;
 }
 

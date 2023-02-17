@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useLayoutEffect, useState } from "react";
 import { BaseBrainSvg } from "../../../svg/BaseBrain";
 import { CalendarySvg } from "../../../svg/Calendary";
 import { ChatBotSvg } from "../../../svg/ChatBot";
@@ -30,7 +30,16 @@ export const Wrapper = ({ children }: any) => {
   const [mouseEnter, setMouseEnter] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [burocraty, setBurocraty] = useState(false);
-  const router = useRouter();
+  const [opacity, setOpacity] = useState(1);
+  const routers = useRouter();
+  const router = {
+    push: (page: string, i: any, data: any) => {
+      setOpacity(0);
+      routers.asPath = "/" + page;
+      setTimeout(() => routers.push(page, i, data), 500);
+      setTimeout(() => setOpacity(1), 750);
+    },
+  };
   return (
     <div className={styles.wrapper}>
       <div
@@ -44,7 +53,7 @@ export const Wrapper = ({ children }: any) => {
         <div className={styles.menu}>
           <div className={styles.menuLabel}>МЕНЮ</div>
           <Button
-            isActive={router.asPath === "/dashboard"} // @ts-ignore
+            isActive={routers.asPath === "/dashboard"} // @ts-ignore
             onClick={() => router.push("dashboard", null, { shallow: true })}
             onMouseEnter={() => {
               setMouseEnter(true);
@@ -56,101 +65,56 @@ export const Wrapper = ({ children }: any) => {
             {!mouseEnter ? <DashboardMouse /> : <DashboardSvg />} Дашборд
           </Button>
           <Button
-            isActive={router.asPath === "/contacts"} // @ts-ignore
+            isActive={routers.asPath === "/contacts"} // @ts-ignore
             onClick={() => router.push("contacts", null, { shallow: true })}
           >
             <ContactSvg /> Контакты
           </Button>
           <Button
-            isActive={router.asPath === "/collegues"} // @ts-ignore
+            isActive={routers.asPath === "/collegues"} // @ts-ignore
             onClick={() => router.push("collegues", null, { shallow: true })}
           >
             <CollegueSvg /> Коллеги
           </Button>
-          <Button onClick={() => setBurocraty(!burocraty)}>
-            <Burocraty /> Бюрократия
-            <div
-              style={{
-                position: "relative",
-                right: "-25px",
-                top: "3px",
-              }}
-            >
-              <Arrow />
-            </div>
-          </Button>
-          {burocraty && (
-            <div>
-              <Button
-                isActive={router.asPath === "/burocraty/vacation"}
-                onClick={() =>
-                  // @ts-ignore
-                  router.push("/burocraty/vacation", null, { shallow: true })
-                }
-              >
-                Отпуск
-              </Button>
-              <Button
-                isActive={router.asPath === "/burocraty/sick"}
-                onClick={() =>
-                  // @ts-ignore
-                  router.push("/burocraty/sick", null, { shallow: true })
-                }
-              >
-                Больничный
-              </Button>
-              <Button
-                isActive={router.asPath === "/burocraty/salary"}
-                onClick={() =>
-                  // @ts-ignore
-                  router.push("/burocraty/salary", null, { shallow: true })
-                }
-              >
-                Зп
-              </Button>
-              <Button
-                isActive={router.asPath === "/burocraty/trips"}
-                onClick={() =>
-                  // @ts-ignore
-                  router.push("/burocraty/trips", null, { shallow: true })
-                }
-              >
-                Командировки
-              </Button>
-            </div>
-          )}
           <Button
-            isActive={router.asPath === "/projects"} // @ts-ignore
+            isActive={routers.asPath === "/burocraty"} // @ts-ignore
+            onClick={() => router.push("burocraty", null, { shallow: true })}
+          >
+            <Burocraty /> Бюрократия
+          </Button>
+
+          <Button
+            isActive={routers.asPath === "/projects"} // @ts-ignore
             onClick={() => router.push("projects", null, { shallow: true })}
           >
             <EventsSvg /> Проекты
           </Button>
           <Button
-            isActive={router.asPath === "/tasks"} // @ts-ignore
+            isActive={routers.asPath === "/tasks"} // @ts-ignore
             onClick={() => router.push("tasks", null, { shallow: true })}
           >
             <EventsSvg /> Задачи
           </Button>
           <Button
-            isActive={router.asPath === "/calendary"} // @ts-ignore
+            isActive={routers.asPath === "/calendary"} // @ts-ignore
             onClick={() => router.push("calendary", null, { shallow: true })}
           >
             <CalendarySvg /> Календарь
           </Button>
           <Button
-            isActive={router.asPath === "/chat-bot"} // @ts-ignore
+            isActive={routers.asPath === "/chat-bot"} // @ts-ignore
             onClick={() => router.push("chat-bot", null, { shallow: true })}
           >
             <ChatBotSvg /> Чат бот
           </Button>
           <Button
-            isActive={router.asPath === "/faq"} // @ts-ignore
+            isActive={routers.asPath === "/faq"} // @ts-ignore
             onClick={() => router.push("faq", null, { shallow: true })}
           >
             <BaseBrainSvg /> База знаний
           </Button>
           <Button
-            isActive={router.asPath === "/documents"} // @ts-ignore
+            isActive={routers.asPath === "/documents"} // @ts-ignore
             onClick={() => router.push("documents", null, { shallow: true })}
           >
             <DocumentsSvg /> Документы
@@ -190,7 +154,7 @@ export const Wrapper = ({ children }: any) => {
           display: "flex",
           flexDirection: "column",
           flex: 1,
-          backgroundColor: "#F2F2F2",
+          borderLeft: "1px solid #EBEBEB",
         }}
       >
         <header className={styles.header}>
@@ -235,7 +199,9 @@ export const Wrapper = ({ children }: any) => {
             <Exit />
           </div>
         </header>
-        <div>{children}</div>
+        <div style={{ transition: "all 0.4s", opacity: opacity }}>
+          {children}
+        </div>
       </div>
     </div>
   );

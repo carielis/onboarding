@@ -28,24 +28,29 @@ export const Contacts = () => {
         >
           <div style={{ display: "flex", flexDirection: "column", flex: "1" }}>
             <div className={styles.titleFilter}>Роль</div>
-            <div
-              style={{
-                colorScheme: "none",
-                borderRadius: "4px",
-                borderStyle: "none !important",
-                outline: "none",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <Checkbox />
-                Product Designer
-              </div>
-              <div style={{ color: "#787878" }}>4</div>
-            </div>
+            {mockData.map((item) => {
+              return (
+                <div
+                  style={{
+                    colorScheme: "none",
+                    borderRadius: "4px",
+                    borderStyle: "none !important",
+                    outline: "none",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                  key={item.id}
+                >
+                  <div>
+                    <Checkbox />
+                    {item.title}
+                  </div>
+                  <div style={{ color: "#787878" }}>{item.count}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -53,3 +58,21 @@ export const Contacts = () => {
   );
 };
 // 16px 40px 0px 24px
+
+const mockData = [
+  {
+    title: "Product Designer",
+    id: 1,
+    count: 4,
+  },
+  {
+    title: "UX исследователь",
+    id: 2,
+    count: 1,
+  },
+  {
+    title: "Frontend developer",
+    id: 3,
+    count: 14,
+  },
+];
