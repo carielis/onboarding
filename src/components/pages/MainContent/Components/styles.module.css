@@ -27,6 +27,8 @@
   /* Text/secondary color */
 
   color: #787878;
+  transition: all 0.1s;
+  cursor: pointer;
 }
 .button:hover {
   background: #8d64d8a1;
@@ -54,4 +56,14 @@
   box-shadow: 0px 4px 24px rgba(140, 100, 216, 0.48);
   align-items: center;
   color: #ffffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* Text/secondary color */
+
+  transition: all 0.1s;
+  cursor: pointer;
 }

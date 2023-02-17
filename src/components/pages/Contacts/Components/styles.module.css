@@ -1,0 +1,115 @@
+.card {
+  width: 393px;
+  height: 180px;
+
+  /* Background/primary color */
+
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 16px;
+}
+.image {
+  width: 64px;
+  height: 64px;
+
+  background: #ffffff;
+  border-radius: 32px;
+  background-color: black;
+}
+
+.topSide {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 12px;
+}
+.role {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2px 8px;
+  gap: 10px;
+  height: 20px;
+  background: rgba(140, 100, 216, 0.19);
+  border-radius: 32px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  justify-content: center;
+  width: fit-content;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+  color: #000000;
+}
+.depart {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Text/secondary color */
+
+  color: #787878;
+}
+.tooltip {
+  position: relative;
+  top: -74px;
+  left: 262px;
+  width: 0px;
+  height: 0px;
+}
+
+.resources {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phoneAndMail {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Core/primary color */
+
+  color: #8c64d8;
+}
+
+.timeLineText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Text/secondary color */
+
+  color: #787878;
+}
+
+.checkbox {
+}
+.checkbox:checked {
+}

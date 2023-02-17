@@ -1,0 +1,56 @@
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.input {
+  outline: none;
+  border-style: none;
+  background-color: #00000000;
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
+}
+.search {
+  display: flex;
+  gap: 12px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 40px 0px 24px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter";
+}
+
+.userRender {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleFilter {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  /* identical to box height, or 144% */
+
+  color: #000000;
+}
