@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 import image1 from "../Images/chess-dynamic-premium.png";
 import image2 from "../Images/crow-dynamic-premium.png";
@@ -10,7 +11,7 @@ export const Adward = ({ set = 0 }) => {
   const dataSet = [image1, image2, image3, image4, image5, image6];
   return (
     <div className={styles.card}>
-      <Image src={dataSet[set]} />
+      {dataSet[set] && <Image src={dataSet[set]} />}
     </div>
   );
 };
