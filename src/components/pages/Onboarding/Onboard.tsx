@@ -1,3 +1,4 @@
+import { Lock } from "./Components/Lock";
 import { Unlock } from "./Components/Unlock";
 import styles from "./styles.module.css";
 export const Onboarding = () => {
@@ -27,11 +28,18 @@ export const Onboarding = () => {
           </div>
         </div>
         <div
-          style={{ marginLeft: 32, marginTop: 92, display: "flex", gap: 62 }}
+          style={{
+            marginLeft: 32,
+            marginTop: 92,
+            display: "flex",
+            gap: 62,
+            alignItems: "center",
+          }}
         >
           <Unlock />
-          <Unlock />
-          <Unlock />
+          <Lock />
+          <Lock />
+          <Lock />
         </div>
       </div>
       <div style={{ display: "flex", flex: "1" }}>Bottmo</div>

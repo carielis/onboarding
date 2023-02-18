@@ -1,8 +1,8 @@
 .card {
-  background-color: #ffffff;
+  background-color: #5b31a9;
   padding: 12px;
-  width: 234px;
-  height: 231px;
+  width: 220.62px;
+  height: 171px;
   border-radius: 12px;
   transform: skewX(170deg);
 }
@@ -21,6 +21,7 @@
   line-height: 24px;
   width: 97px;
   margin-bottom: 4px;
+  color: white;
   /* or 150% */
 }
 .taskToday {
@@ -80,20 +81,20 @@
 
 .notifDay {
   position: relative;
-  left: 193px;
+  left: 173px;
   top: -30px;
-  background: #fddd18;
-  box-shadow: 0px 4px 32px rgb(253 221 24 / 24%);
+  background: #5e36ab;
   border-radius: 32px;
   width: 59px;
   height: 59px;
-  border: 6px solid #8856e4;
+  border: 6px solid #6a39c7;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Inter";
   font-style: normal;
   flex-direction: column;
+  color: white !important;
 }
 
 .dayTextNot {
@@ -103,10 +104,17 @@
 
   /* Text/secondary color */
 
-  color: #787878;
+  color: white;
 }
 .cms {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+}
+
+.lockPos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
 }

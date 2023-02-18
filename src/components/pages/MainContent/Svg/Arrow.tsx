@@ -1,4 +1,4 @@
-export const Arrow = () => {
+export const Arrow = ({ color = "white" }) => {
   return (
     <svg
       width="16"
@@ -9,7 +9,7 @@ export const Arrow = () => {
     >
       <path
         d="M5.9668 2.72L10.3135 7.06667C10.8268 7.58 10.8268 8.42 10.3135 8.93333L5.9668 13.28"
-        stroke="white"
+        stroke={color}
         strokeWidth="1.5"
         strokeMiterlimit="10"
         strokeLinecap="round"
