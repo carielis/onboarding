@@ -11,7 +11,7 @@ export const Burocraty = () => {
   const [tab, setTab] = useState(1);
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>Бюрократия</div>
+      <div className={styles.title}>Кадровые вопросы</div>
       <div className={styles.tabSelect}>
         <div onClick={() => setTab(1)} className={styles.tab}>
           <div style={{ display: "flex", gap: 8 }}>

@@ -90,10 +90,11 @@ export const Wrapper = ({ children }: any) => {
             <CollegueSvg /> Коллеги
           </Button>
           <Button
+            style={{ fontSize: "15px" }}
             isActive={routers.asPath === "/burocraty"} // @ts-ignore
             onClick={() => router.push("burocraty", null, { shallow: true })}
           >
-            <Burocraty /> Бюрократия
+            <Burocraty /> Кадровые вопросы
           </Button>
 
           <Button

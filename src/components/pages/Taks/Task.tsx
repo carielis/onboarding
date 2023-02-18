@@ -18,7 +18,7 @@ export const Task = () => {
         <CardCompleteTask />
         <CardWithHelper />
       </div>
-      <div>
+      <div style={{ display: "flex", gap: "24px" }}>
         <Tab tab={tab} isTab={1} setTab={() => setTab(1)} />
         <Tab tab={tab} isTab={2} setTab={() => setTab(2)} />
         <Tab tab={tab} isTab={3} setTab={() => setTab(3)} />
@@ -32,7 +32,9 @@ export const Task = () => {
 const Tab = ({ tab, setTab, isTab }: any) => {
   return (
     <div onClick={() => setTab(2)} className={styles.tab}>
-      <div style={{ display: "flex", gap: 8 }}>День 1 (10.02.2022)</div>
+      <div style={{ display: "flex", gap: 8, paddingBottom: 4 }}>
+        День 1 (10.02.2022)
+      </div>
       {tab === isTab && <div className={styles.selectedTab} />}
     </div>
   );
