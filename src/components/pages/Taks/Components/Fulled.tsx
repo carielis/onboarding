@@ -1,80 +1,93 @@
+import { Draggable, resetServerContext } from "react-beautiful-dnd";
 import { Document, Message } from "../../Onboarding/Components/Svg";
 import styles from "./fulled.module.css";
 
-export const Fulled = () => {
+export const Fulled = ({ text, index }: any) => {
+  resetServerContext();
   return (
-    <div draggable onDragEnd={(ev) => console.log(ev)} className={styles.card}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div className={styles.title}>Прийти в офис</div>
-        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          <ClipBoard />{" "}
-          <span
-            style={{
-              fontStyle: "normal",
-              fontWeight: "400",
-              fontSize: "11px",
-              lineHeight: "13px",
-              fontFamily: '"Inter"',
-              color: "#A2A1A1",
-            }}
-          >
-            1
-          </span>
-        </div>
-      </div>
-      <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+    <Draggable draggableId={text} index={index}>
+      {(provided, snapshot) => (
         <div
-          style={{ color: "#8C64D8", background: "#F3EFFB" }}
-          className={styles.status}
+          className={styles.card}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          style={{ ...provided.draggableProps.style }}
+          draggable={snapshot.isDragging}
         >
-          Дизайн
-        </div>
-        <div
-          style={{ color: "#787878", border: "1px solid #DFDFDF" }}
-          className={styles.status}
-        >
-          Иконки
-        </div>
-      </div>
-      <div style={{ display: "flex", gap: "8px" }}>
-        <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-          <Document />
-          <span
+          <div
             style={{
-              fontStyle: "normal",
-              fontWeight: "400",
-              fontSize: "12px",
-              lineHeight: "13px",
-              fontFamily: '"Inter"',
-              color: "#A2A1A1",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            4
-          </span>
+            <div className={styles.title}>{text}</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+              <ClipBoard />
+              <span
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  fontSize: "11px",
+                  lineHeight: "13px",
+                  fontFamily: '"Inter"',
+                  color: "#A2A1A1",
+                }}
+              >
+                1
+              </span>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+            <div
+              style={{ color: "#8C64D8", background: "#F3EFFB" }}
+              className={styles.status}
+            >
+              Дизайн
+            </div>
+            <div
+              style={{ color: "#787878", border: "1px solid #DFDFDF" }}
+              className={styles.status}
+            >
+              Иконки
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+              <Document />
+              <span
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  fontSize: "12px",
+                  lineHeight: "13px",
+                  fontFamily: '"Inter"',
+                  color: "#A2A1A1",
+                }}
+              >
+                4
+              </span>
+            </div>
+            <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+              <Message />
+              <span
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  fontSize: "12px",
+                  lineHeight: "13px",
+                  fontFamily: '"Inter"',
+                  color: "#A2A1A1",
+                }}
+              >
+                4
+              </span>
+            </div>
+          </div>
         </div>
-        <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-          <Message />
-          <span
-            style={{
-              fontStyle: "normal",
-              fontWeight: "400",
-              fontSize: "12px",
-              lineHeight: "13px",
-              fontFamily: '"Inter"',
-              color: "#A2A1A1",
-            }}
-          >
-            4
-          </span>
-        </div>
-      </div>
-    </div>
+      )}
+    </Draggable>
   );
 };
 
