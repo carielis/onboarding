@@ -124,3 +124,20 @@
   border-radius: 12px;
   margin-top: 32px;
 }
+
+.resultHeader {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.bgResult {
+  background-image: url(/_next/static/media/bg-result.02c3b5bc.svg);
+  background-position: top;
+  padding: 132px 24px 0px;
+  background-repeat: no-repeat;
+}

@@ -18,10 +18,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <Head>
         <title>Росмолодежь</title>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
         <link
-          rel="shortcut icon"
-          href={"/public/images/favicon.ico"}
-          type="image/x-icon"
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
         />
       </Head>
       {isWrapper ? (
