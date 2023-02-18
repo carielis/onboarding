@@ -1,0 +1,34 @@
+.card {
+  background-color: #ffffff;
+  padding: 12px;
+  width: 234px;
+  height: 231px;
+  border-radius: 12px;
+  transform: skewX(170deg);
+}
+.container {
+  transform: skewX(-170deg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  width: 97px;
+  margin-bottom: 4px;
+  /* or 150% */
+}
+.taskToday {
+  width: 194px;
+  height: 50px;
+
+  /* Text invert/secondary color */
+
+  background: #f2f2f2;
+  border-radius: 12px;
+}
