@@ -1,4 +1,5 @@
 import styles from "./card.module.css";
+import { Poplic } from "./Poplic";
 export const Card = () => {
   return (
     <div className={styles.card}>
@@ -39,7 +40,9 @@ export const CardWithHelper = () => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
-        <div className={styles.hero} />
+        <div className={styles.hero}>
+          <Poplic />
+        </div>
         <div
           className={styles.description}
           style={{

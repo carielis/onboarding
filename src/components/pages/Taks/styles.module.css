@@ -34,3 +34,21 @@
     opacity: 1;
   }
 }
+
+.headTable {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.table {
+  width: 280px;
+  height: 623px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
