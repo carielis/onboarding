@@ -21,6 +21,7 @@ import { Dark } from "./Svg/Dark";
 import { Exit } from "./Svg/Exit";
 import { Figma } from "./Svg/Figma";
 import { GitSvg } from "./Svg/Git";
+import { Hero } from "./Svg/Hero";
 import { Jira } from "./Svg/Jira";
 import { Light } from "./Svg/Light";
 import { Money } from "./Svg/Money";
@@ -28,8 +29,20 @@ import { Notion } from "./Svg/Notion";
 
 export const Wrapper = ({ children }: any) => {
   const [mouseEnter, setMouseEnter] = useState(false);
-  const [theme, setTheme] = useState("dark");
-  const [burocraty, setBurocraty] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [progress, setProgress] = useState({
+    current: 8,
+    total: 24,
+    result: (100 / 24) * 0,
+  });
+
+  useEffect(() => {
+    setProgress({
+      current: 8,
+      total: 24,
+      result: (100 / 24) * 8,
+    });
+  }, []);
   const [opacity, setOpacity] = useState(1);
   const routers = useRouter();
   const router = {
@@ -62,17 +75,17 @@ export const Wrapper = ({ children }: any) => {
               setMouseEnter(false);
             }}
           >
-            {!mouseEnter ? <DashboardMouse /> : <DashboardSvg />} Дашборд
+            {!mouseEnter || routers.asPath !== "/dashboard" ? (
+              <DashboardMouse />
+            ) : (
+              <DashboardSvg />
+            )}
+            Дашборд
           </Button>
+
           <Button
             isActive={routers.asPath === "/contacts"} // @ts-ignore
             onClick={() => router.push("contacts", null, { shallow: true })}
-          >
-            <ContactSvg /> Контакты
-          </Button>
-          <Button
-            isActive={routers.asPath === "/collegues"} // @ts-ignore
-            onClick={() => router.push("collegues", null, { shallow: true })}
           >
             <CollegueSvg /> Коллеги
           </Button>
@@ -132,7 +145,47 @@ export const Wrapper = ({ children }: any) => {
         </div>
         <div className={styles.menu}>
           <div className={styles.menuLabel}>ОНБОРДИНГ</div>
-          <div className={styles.frameOnboarding} />
+          <div
+            onClick={() => router.push("onboard", "", { shallow: true })}
+            className={styles.frameOnboarding}
+          >
+            <div style={{ marginTop: "-5px", marginLeft: "6px", height: 64 }}>
+              <Hero />
+            </div>
+            <div style={{ position: "relative", top: "-42px", left: "161px" }}>
+              <Arrow />
+            </div>
+            <div
+              style={{
+                paddingLeft: 12,
+                display: "flex",
+                flexDirection: "column",
+                gap: 4,
+              }}
+            >
+              <div className={styles.step}>
+                Этап {progress.current} из {progress.total}
+              </div>
+              <div
+                style={{
+                  width: "160px",
+                  height: "4px",
+                  background: "#FFFFFF",
+                  borderRadius: "32px",
+                }}
+              >
+                <div
+                  style={{
+                    height: 4,
+                    borderRadius: 32,
+                    width: `${progress.result}%`,
+                    background: "#1EC025",
+                    transition: "all 0.2s",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className={styles.theme}>

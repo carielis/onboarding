@@ -1,0 +1,29 @@
+.card {
+  height: 91px;
+
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px;
+  margin-left: 32px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+
+  color: #000000;
+}
+
+.description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}

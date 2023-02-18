@@ -11,6 +11,7 @@
   display: flex;
   flex: 1;
   width: 100vw;
+  overflow: hidden;
 }
 
 .menuLabel {
@@ -33,13 +34,11 @@
 
 .frameOnboarding {
   width: 184px;
-  height: 142px;
-
-  /* Background/secondary color */
-
-  background: #f2f2f2;
+  height: 112px;
+  background: linear-gradient(41.82deg, #8c64d8 3.1%, #541dbd 100%);
   border-radius: 12px;
   margin-left: 12px;
+  cursor: pointer;
 }
 
 .theme {
@@ -159,4 +158,14 @@
     left: 132px;
     width: 20px;
   }
+}
+
+.step {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #ffffff;
 }
