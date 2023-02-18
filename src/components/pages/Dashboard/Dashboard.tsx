@@ -41,7 +41,9 @@ export const Dashboard = () => {
                 overflow: "auto",
               }}
             >
-              <Adward /> <Adward /> <Adward /> <Adward /> <Adward /> <Adward />
+              <Adward set={0} /> <Adward set={1} />
+              <Adward set={3} /> <Adward set={4} /> <Adward set={5} />
+              <Adward set={12} />
             </div>
           </div>
           <div>

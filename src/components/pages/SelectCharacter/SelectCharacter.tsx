@@ -5,7 +5,7 @@ import { Checkbox } from "./Checkbox";
 import styles from "./styles.module.css";
 
 export const SelectCharacter = () => {
-  const [hero, setHero] = useState(0);
+  const [hero, setHero] = useState(1);
   const router = useRouter();
   return (
     <div className={styles.root}>
@@ -70,21 +70,36 @@ export const SelectCharacter = () => {
             </button>
           </div>
         </div>
-        <div className={styles.HeroHeader}>Поплик</div>
-        <div className={styles.HeroDecription}>
-          Поплинк — молодой клоун, который живет со своим отцом, Марлином в
-          актинии. Прежде, чем он вылупился из его икринки, мать Немо
-        </div>
+        <div className={styles.HeroHeader}>{heroes[hero].title}</div>
+        <div className={styles.HeroDecription}>{heroes[hero].desc}</div>
         <button
           onClick={() => router.push("dashboard", "", { shallow: true })}
           className={styles.button}
         >
-          Продолжить с попликом
+          Продолжить с {heroes[hero].title}
         </button>
       </div>
       <div className={styles.rightSide}>
-        <div className={styles.poplick} />
+        <div className={styles[heroes[hero].className]} />
       </div>
     </div>
   );
+};
+
+const heroes = {
+  ["1"]: {
+    title: "Клювик",
+    className: "klyvik",
+    desc: "Клювик — прагматичный и серьезный представитель пернатых. Он внимательно будет следить за тобой в процессе онбординга и не упустит ни одной детали",
+  },
+  ["2"]: {
+    title: "Поплик",
+    className: "poplick",
+    desc: "Морской котик Поплик воодушевит тебя своим позитивом и энергичностью. Он уж точно не будет ругать при ошибках во время тестирования, но не расслабляйся!",
+  },
+  ["3"]: {
+    title: "Рыблик",
+    className: "ryblik",
+    desc: "Рыблик — крайне активный и харизматичный. В онбординге он как рыба в воде и будет рад помочь тебе с любым возникшим вопросом.",
+  },
 };

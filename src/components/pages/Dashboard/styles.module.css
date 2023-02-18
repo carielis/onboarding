@@ -51,10 +51,14 @@
 }
 
 .progressOnboard {
-  width: 53vw;
+  width: 757px;
   height: 161px;
 
   background: #f5f5f5;
+  background-image: url(./bg-road.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 12px;
 }
 

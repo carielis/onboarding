@@ -30,6 +30,26 @@
   margin-left: -69px;
 }
 
+.klyvik {
+  background-image: url(./klyckvik.png);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  flex: 1;
+
+  margin-left: -69px;
+}
+.ryblik {
+  background-image: url(./ryblik.png);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  flex: 1;
+
+  margin-left: -69px;
+}
 .headerLeft {
   width: 529px;
   height: 120px;

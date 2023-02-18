@@ -50,7 +50,7 @@ export const Onboarding = () => {
         </div>
       </div>
       <div className={styles.bottomSide}>
-        <div>
+        <div style={{ height: "fit-content" }}>
           <div className={styles.title}>Подача документов</div>
           <div className={styles.description}>
             Сегодня вам нужно выполнить Постановка задачи — точная формулировка
@@ -96,8 +96,8 @@ export const Onboarding = () => {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 24 }}>
-          <div>
+        <div style={{ display: "flex", gap: 24, height: "fit-content" }}>
+          <div style={{ height: "fit-content" }}>
             <div
               style={{
                 display: "flex",
@@ -124,13 +124,14 @@ export const Onboarding = () => {
               <Fulled />
             </div>
           </div>
-          <div>
+          <div style={{ height: "fit-content" }}>
             <div
               style={{
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
                 marginBottom: 8,
+                height: "fit-content",
               }}
             >
               <div

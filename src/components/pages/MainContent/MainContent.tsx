@@ -253,7 +253,16 @@ export const Wrapper = ({ children }: any) => {
             <Exit />
           </div>
         </header>
-        <div style={{ transition: "all 0.4s", opacity: opacity }}>
+        <div
+          style={{
+            transition: "all 0.4s",
+            opacity: opacity,
+            overflowY: routers.asPath === "/onboard" ? "hidden" : "auto",
+            overflowX: "hidden",
+            display: "flex",
+            flex: 1,
+          }}
+        >
           {children}
         </div>
       </div>

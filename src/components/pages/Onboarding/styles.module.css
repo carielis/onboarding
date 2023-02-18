@@ -52,8 +52,9 @@
 
 .renderTask {
   background-image: url(./background.svg);
-  background-position: right 41vh;
+  background-position: 18vh 40vh;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .bottomSide {
