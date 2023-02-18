@@ -63,9 +63,10 @@ export const Task = () => {
       return null;
 
     // Set start and end variables
+    // @ts-ignore
     const start = columns[source.droppableId];
+    // @ts-ignore
     const end = columns[destination.droppableId];
-    console.log(columns, source, columns[source.droppableId]);
     // If start is the same as end, we're in the same column
     if (start === end) {
       // Move the item within the list
