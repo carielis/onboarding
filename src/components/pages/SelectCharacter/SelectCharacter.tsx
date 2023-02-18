@@ -86,7 +86,7 @@ export const SelectCharacter = () => {
   );
 };
 
-const heroes = {
+const heroes: any = {
   ["1"]: {
     title: "Клювик",
     className: "klyvik",
