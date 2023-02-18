@@ -1,0 +1,211 @@
+.leftSide {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  padding: 48px 0px 93px 64px;
+}
+
+.rightSide {
+  display: flex;
+  flex: 1.5;
+  background-image: url(./Background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.root {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-height: 100vh;
+}
+.poplick {
+  background-image: url(./poplick.png);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  flex: 1;
+
+  margin-left: -69px;
+}
+
+.headerLeft {
+  width: 529px;
+  height: 120px;
+  left: 64px;
+  top: 128px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  /* or 150% */
+  margin-top: 40px;
+  color: #000000;
+}
+
+.descriptionLeft {
+  width: 448px;
+  height: 48px;
+  left: 64px;
+  top: 268px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.HeroHeader {
+  margin-top: 48px;
+  margin-bottom: 12px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  /* identical to box height, or 112% */
+
+  color: #000000;
+}
+.HeroDecription {
+  margin-bottom: 20px;
+  width: 570px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  color: #000000;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+
+  width: 245px;
+  height: 48px;
+
+  /* Core/primary color */
+
+  background: #8c64d8;
+  border-radius: 12px;
+  outline: none;
+  border-style: none;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Text invert/primary color */
+
+  color: #ffffff;
+}
+
+.hero1 {
+  width: 183px;
+  height: 187px;
+  background-image: url("./Клювик.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero2 {
+  width: 183px;
+  height: 187px;
+  background-image: url("./Поплик.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero3 {
+  width: 183px;
+  height: 187px;
+  background-image: url("./Рыблик.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.buttonSelect {
+  margin-top: 18px;
+  margin-left: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 10px;
+  outline: none;
+  border-style: none;
+  width: 128px;
+  height: 32px;
+
+  /* Icon invert/tertiary color */
+
+  background: #dedede;
+  border-radius: 32px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Text/tertiary color */
+
+  color: #a2a1a1;
+}
+.buttonSelected {
+  margin-top: 18px;
+  margin-left: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 10px;
+  outline: none;
+  border-style: none;
+  width: 128px;
+  height: 32px;
+
+  /* Icon invert/tertiary color */
+
+  background: #000000;
+  border-radius: 32px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Text/tertiary color */
+
+  color: #ffffff;
+}
+.checkbox {
+  position: relative;
+  right: -152px;
+  top: -11px;
+  width: 0px;
+  height: 0px;
+}

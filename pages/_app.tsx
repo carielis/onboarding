@@ -5,7 +5,7 @@ import { Wrapper } from "../src/components/pages/MainContent/MainContent";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isWrapper = router.asPath !== "/";
+  const isWrapper = router.asPath !== "/" && router.asPath !== "/select-hero";
   return (
     <div
       style={{
