@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import { ArrowBack } from "./Svg/ArrowBack";
 export default function Test() {
   const [step, setStep] = useState(1);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<any>(null);
   const router = useRouter();
   useEffect(() => {
     setSelected(null);
