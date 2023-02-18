@@ -49,7 +49,7 @@ export const Wrapper = ({ children }: any) => {
     push: (page: string, i: any, data: any) => {
       setOpacity(0);
       routers.asPath = "/" + page;
-      setTimeout(() => routers.push(page, i, data), 500);
+      setTimeout(() => routers.push(`/${page}`, i, data), 500);
       setTimeout(() => setOpacity(1), 750);
     },
   };
