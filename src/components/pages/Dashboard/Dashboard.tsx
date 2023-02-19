@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 
 export const Dashboard = () => {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <header className={styles.header}>
         <div style={{ marginTop: "-23px", marginLeft: 24 }}>
           <Hero />

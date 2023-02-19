@@ -1,0 +1,35 @@
+.button {
+  height: 40px;
+  padding: 0 46px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+  border-style: none;
+
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.buttonPrimary {
+  background: #8c64d8;
+  color: #fff;
+}
+
+.buttonSecondary {
+  background: rgba(52, 52, 52, 0.33);
+  color: #fff;
+}

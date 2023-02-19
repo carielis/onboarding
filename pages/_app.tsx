@@ -4,9 +4,13 @@ import { useRouter } from "next/router";
 import { Wrapper } from "../src/components/pages/MainContent/MainContent";
 import Head from "next/head";
 import favico from "../public/images/favicon.ico";
+import { WrapperHr } from "../src/components/hr/MainContent/MainContent";
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isWrapper = router.asPath !== "/" && router.asPath !== "/select-hero";
+  const isWrapper =
+    router.asPath !== "/" &&
+    router.asPath !== "/select-hero" &&
+    router.asPath.indexOf("/hr") === -1;
   return (
     <div
       style={{
@@ -41,8 +45,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Wrapper>
           <Component {...pageProps} />
         </Wrapper>
-      ) : (
+      ) : router.asPath.indexOf("/hr") === -1 ? (
         <Component {...pageProps} />
+      ) : (
+        <WrapperHr>
+          <Component {...pageProps} />
+        </WrapperHr>
       )}
     </div>
   );

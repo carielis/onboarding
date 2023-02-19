@@ -1,0 +1,69 @@
+.entryContent {
+  width: 100%;
+  height: 100%;
+  padding-top: 154px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.entryContentImage {
+  background-color: #fff;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.entryContentImage::before {
+  content: "";
+
+  background-image: url("./Поплик.png");
+
+  width: 182px;
+  height: 236px;
+}
+
+.entryContentText {
+  width: 380px;
+  text-align: center;
+
+  color: #000000;
+
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.entryContentTextSeparator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #a2a1a1;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.entryContentTextSeparator::after,
+.entryContentTextSeparator::before {
+  content: "";
+  background-color: #d7d7d7;
+  width: 200px;
+  height: 1px;
+}
+
+.entryContentButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}

@@ -1,0 +1,59 @@
+.user {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 0px 12px;
+  grid-template-areas:
+    "avatar name"
+    "avatar contacts";
+}
+
+.userAvatar {
+  grid-area: avatar;
+
+  background-image: url("./Алина.png");
+
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.userName {
+  grid-area: name;
+
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.userContacts {
+  grid-area: contacts;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactIcon {
+}
+
+.contactInfo {
+  font-style: normal;
+  color: #8c64d8;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}

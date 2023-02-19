@@ -1,14 +1,14 @@
-export const ArrowBack = ({ color = "white" }) => {
+export const Arrow = ({ color = "white" }) => {
   return (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M12.5752 16.6L7.14186 11.1667C6.50019 10.525 6.50019 9.47503 7.14186 8.83336L12.5752 3.40002"
+        d="M5.9668 2.72L10.3135 7.06667C10.8268 7.58 10.8268 8.42 10.3135 8.93333L5.9668 13.28"
         stroke={color}
         strokeWidth="1.5"
         strokeMiterlimit="10"

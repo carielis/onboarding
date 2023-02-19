@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 24px;
   padding: 16px 40px 0px 24px;
+  flex: 1;
 }
 .count_projects {
   background: #8c64d8;

@@ -1,5 +1,8 @@
 .root {
   padding: 24px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 .containerCard {
   display: flex;
@@ -8,15 +11,6 @@
   margin-bottom: 32px;
 }
 
-.title {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
-  font-family: "Inter";
-  color: #000000;
-}
 .selectedTab {
   border-bottom: 3px solid #8c64d8;
   box-shadow: 0px 1px 12px rgba(140, 100, 216, 0.32);
@@ -41,7 +35,15 @@
   font-size: 16px;
   line-height: 30px;
 }
-
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+  font-family: "Inter";
+  color: #000000;
+}
 .table {
   width: 280px;
   height: 623px;

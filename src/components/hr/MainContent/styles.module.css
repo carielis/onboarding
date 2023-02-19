@@ -1,0 +1,171 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 12px 0px 12px;
+  max-height: calc(100vh - 391px);
+  overflow-x: hidden;
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.menuLabel {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #787878;
+  padding-left: 12px;
+}
+
+.appContainer {
+  display: flex;
+  gap: 11px;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.frameOnboarding {
+  width: 184px;
+  height: 112px;
+  background: linear-gradient(41.82deg, #8c64d8 3.1%, #541dbd 100%);
+  border-radius: 12px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.theme {
+  position: absolute;
+  width: 240px;
+  height: 59px;
+  left: 0px;
+  bottom: 0px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.themeName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  gap: 8px;
+  line-height: 24px;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.selectLight {
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  left: 43px;
+  top: 46px;
+  background: #8c64d8;
+  box-shadow: 0px 1px 8px rgb(140 100 216 / 42%);
+  border-radius: 32px;
+  animation: Light 0.3s ease-in-out;
+  user-select: none;
+}
+.selectDark {
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  left: 132px;
+  top: 46px;
+  background: #8c64d8;
+  box-shadow: 0px 1px 8px rgb(140 100 216 / 42%);
+  border-radius: 32px;
+  animation: Dark 0.3s ease-in-out;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 40px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  /* Text/primary color */
+
+  color: #000000;
+}
+
+.moneyName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  /* Text/secondary color */
+
+  color: #787878;
+}
+
+@keyframes Light {
+  from {
+    left: 132px;
+  }
+  60% {
+    left: 43px;
+    width: 108px;
+  }
+  to {
+    left: 43px;
+    width: 20px;
+  }
+}
+@keyframes Dark {
+  from {
+    left: 43px;
+  }
+  60% {
+    left: 43px;
+    width: 108px;
+  }
+  to {
+    left: 132px;
+    width: 20px;
+  }
+}
+
+.step {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #ffffff;
+}

@@ -1,0 +1,84 @@
+.message {
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.messageByUser {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}
+
+.messageAvatarWrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.messageAvatar {
+  background-color: #fff;
+  background-image: url("./Поплик.png");
+  background-position: center bottom;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+.messageByUser .messageAvatar {
+  background-image: url("./Марк.png");
+  background-size: 100%;
+}
+
+.messageContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.messageContent {
+  background-color: #fff;
+  max-width: 100%;
+  padding: 8px 16px;
+  border-radius: 20px 20px 20px 4px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.messageByUser .messageContent {
+  background: #8c64d8;
+  border-radius: 20px 20px 4px 20px;
+  color: #fff;
+}
+
+.messageText {
+  width: max-content;
+  max-width: 400px;
+}
+
+.messageButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.messageFooter {
+  align-self: flex-start;
+
+  display: flex;
+  align-items: center;
+
+  color: #787878;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.messageByUser .messageFooter {
+  align-self: flex-end;
+}

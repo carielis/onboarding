@@ -1,0 +1,116 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 24px;
+}
+
+.little {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #787878;
+}
+
+.medium {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Text/primary color */
+
+  color: #000000;
+}
+
+.progress {
+  width: 185px;
+  height: 6px;
+
+  /* Text invert/tertiary color */
+
+  background: #dedede;
+  border-radius: 32px;
+}
+
+.tab {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Text/secondary color */
+
+  color: #787878;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2;
+  user-select: none;
+}
+.selectedTab {
+  border-bottom: 3px solid #8c64d8;
+  box-shadow: 0px 1px 12px rgba(140, 100, 216, 0.32);
+  width: 100%;
+  height: 2px;
+  animation: swithTab 0.3s;
+}
+.tabSelect {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+@keyframes swithTab {
+  from {
+    opacity: 0;
+    width: 0%;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.headerText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.headTable {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+}
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+  font-family: "Inter";
+  color: #000000;
+}
+.table {
+  width: 280px;
+  height: 530px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+  overflow: auto;
+}
