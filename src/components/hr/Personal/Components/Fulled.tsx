@@ -1,5 +1,5 @@
 import { Draggable, resetServerContext } from "react-beautiful-dnd";
-import { Document, Message } from "../../Onboarding/Components/Svg";
+import { Document, Message } from "../../../pages/Onboarding/Components/Svg";
 import styles from "./fulled.module.css";
 
 export const Fulled = ({ text, index }: any) => {
