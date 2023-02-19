@@ -3,7 +3,7 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { ArrowBack } from "../../pages/Test/Svg/ArrowBack";
 import { Column } from "./Column/Column";
 import styles from "./styles.module.css";
-import { Cross } from "./Svg";
+import { Cross, Plus } from "./Svg";
 import { UserPic } from "./UserPic";
 export const User = () => {
   const [tab, setTab] = useState(2);
@@ -303,10 +303,13 @@ export const User = () => {
                         textAlign: "right",
                         color: "#8C64D8",
                         cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
                       }}
                       onClick={() => setModal(true)}
                     >
-                      Добавить задачу
+                      Задача <Plus />
                     </div>
                   )}
                 </div>

@@ -18,7 +18,10 @@ export const Task = () => {
   var store = require("store");
   const table = store.get("table");
   const [tab, setTab] = useState(1);
-  const [columns, setColumns] = useState({});
+  const [load, setLoad] = useState(false);
+  const [columns, setColumns] = useState({
+    data: {},
+  });
   const onDragEnd = ({ source, destination }: DropResult) => {
     // Make sure we have a valid destination
     if (destination === undefined || destination === null) return null;
@@ -93,8 +96,8 @@ export const Task = () => {
     }
   };
   useEffect(() => {
-    console.log(table);
-    setColumns(table.data.data);
+    table && setColumns(table.data);
+    table && setLoad(true);
   }, []);
   return (
     <div className={styles.root}>
@@ -121,15 +124,16 @@ export const Task = () => {
         }}
       >
         <DragDropContext onDragEnd={onDragEnd}>
-          {Object.values(columns).map((col: any) => (
-            <div
-              key={col.id}
-              style={{ display: "flex", flex: "1", flexDirection: "column" }}
-            >
-              <div className={styles.headTable}>{col.id}</div>
-              <Column id={col.id} col={col} label={col.label} />
-            </div>
-          ))}
+          {load &&
+            Object.values(columns).map((col: any) => (
+              <div
+                key={col.id}
+                style={{ display: "flex", flex: "1", flexDirection: "column" }}
+              >
+                <div className={styles.headTable}>{col.id}</div>
+                <Column id={col.id} col={col} label={col.label} />
+              </div>
+            ))}
         </DragDropContext>
       </div>
     </div>
