@@ -4,14 +4,14 @@ import { TimeLine } from "../Svg/TimeLine";
 import { Tooltip } from "../Svg/Tooltip";
 import styles from "./styles.module.css";
 
-export const UserCard = () => {
+export const UserCard = ({ title, role }: any) => {
   return (
     <div className={styles.card}>
       <div className={styles.topSide}>
         <div className={styles.image}></div>
         <div className={styles.info}>
-          <div className={styles.role}>Product Designer</div>
-          <div className={styles.name}>Никита Смагин</div>
+          <div className={styles.role}>{role}</div>
+          <div className={styles.name}>{title}</div>
           <div className={styles.depart}>Департамент развития молодежи</div>
           <div className={styles.tooltip}>
             <Tooltip />

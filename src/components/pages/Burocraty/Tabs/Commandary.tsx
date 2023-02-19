@@ -3,7 +3,7 @@ import { Document2 } from "../Svg/Doc2";
 import styles from "./commandary.module.css";
 import { Card } from "./Components/Card";
 
-export const Commandary = () => {
+export const Commandary = ({ data }: any) => {
   return (
     <div className={styles.wrapper}>
       <div
@@ -15,19 +15,15 @@ export const Commandary = () => {
       >
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div>
-            <div className={styles.header}>Закрытие командировки</div>
+            <div className={styles.header}>{data.head}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              <div className={styles.mainDescription}>
-                Чтобы отчитаться за командировку, говоря формальным языком,
-                необходимо закрыть долги по подотчету, сдать авансовые отчеты с
-                приложением к ним документов, подтверждающих расходы.
-              </div>
-              <div className={styles.mainDescription}>
-                Сначала нужно скачать документ. Дальше будет пример отчёта
-                дизайнера за командировку, но в целом процесс одинаковый для
-                всех и отличается только на этапе заполнения формы на этапе
-                загрузки заполненных документов.
-              </div>
+              {data.desc.map((text: string) => {
+                return (
+                  <div key={text} className={styles.mainDescription}>
+                    {text}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

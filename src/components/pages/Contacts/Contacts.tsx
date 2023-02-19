@@ -15,10 +15,10 @@ export const Contacts = () => {
       </div>
       <div className={styles.list}>
         <div className={styles.userRender}>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+          <UserCard title={"Алиева Анна"} role={"Аналитик"} />
+          <UserCard title={"Максимов Илья"} role={"Администратор"} />
+          <UserCard title={"Власов Артём"} role={"Аналитик"} />
+          <UserCard title={"Ефремова Ясмина"} role={"Администратор"} />
         </div>
         <div
           style={{

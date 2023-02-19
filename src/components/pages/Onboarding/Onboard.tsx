@@ -44,9 +44,9 @@ export const Onboarding = () => {
           }}
         >
           <Unlock />
-          <Lock />
-          <Lock />
-          <Lock />
+          <Lock day={2} title={"Корпоративная культура"} />
+          <Lock day={3} title={"Освоение места"} />
+          <Lock day={4} title={"Первые задачи"} />
         </div>
       </div>
       <div className={styles.bottomSide}>

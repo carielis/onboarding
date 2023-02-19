@@ -13,7 +13,7 @@ export const Fulled = () => {
       >
         <div className={styles.title}>Прийти в офис</div>
         <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          <ClipBoard />{" "}
+          <ClipBoard />
           <span
             style={{
               fontStyle: "normal",
