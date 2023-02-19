@@ -121,7 +121,7 @@ export const Task = () => {
         }}
       >
         <DragDropContext onDragEnd={onDragEnd}>
-          {Object.values(columns).map((col) => (
+          {Object.values(columns).map((col: any) => (
             <div
               key={col.id}
               style={{ display: "flex", flex: "1", flexDirection: "column" }}
