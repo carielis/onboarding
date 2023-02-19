@@ -56,7 +56,11 @@ export const HomePage: FC<Props> = () => {
             />
           </div>
           <button
-            onClick={() => router.push("select-hero", "", { shallow: true })}
+            onClick={() =>
+              router.push(tab == 2 ? "/hr/contacts" : "select-hero", "", {
+                shallow: true,
+              })
+            }
             className={styles.button}
           >
             Войти
