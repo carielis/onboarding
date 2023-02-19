@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DragDropContext,
   DropResult,
@@ -15,42 +15,10 @@ import { Fulled } from "./Components/Fulled";
 import styles from "./styles.module.css";
 
 export const Task = () => {
-  const mock = {
-    todo: {
-      label: "todo",
-      id: "Назначены",
-      list: [
-        "Найти офис",
-        "Получить пропуск",
-        "Познакомиться с ментором",
-        "Посетить экскурсию по офису",
-      ],
-    },
-    inprogess: {
-      label: "inprogess",
-      id: "В процессе",
-      list: [
-        "Указать пожелания к рабочему месту",
-        "Сдать тест профессиональный",
-      ],
-    },
-    approved: {
-      label: "approved",
-      id: "Проверка",
-      list: [],
-    },
-    completed: {
-      label: "completed",
-      id: "Выполнено",
-      list: [
-        "Знакомство с корпоративной культурой",
-        "Изучение первых документов",
-      ],
-    },
-  };
-
+  var store = require("store");
+  const table = store.get("table");
   const [tab, setTab] = useState(1);
-  const [columns, setColumns] = useState(mock);
+  const [columns, setColumns] = useState({});
   const onDragEnd = ({ source, destination }: DropResult) => {
     // Make sure we have a valid destination
     if (destination === undefined || destination === null) return null;
@@ -124,6 +92,10 @@ export const Task = () => {
       return null;
     }
   };
+  useEffect(() => {
+    console.log(table);
+    setColumns(table.data.data);
+  }, []);
   return (
     <div className={styles.root}>
       <div className={styles.title}>Задачи</div>

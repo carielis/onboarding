@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { ArrowBack } from "../../pages/Test/Svg/ArrowBack";
 import { Column } from "./Column/Column";
 import styles from "./styles.module.css";
+import { Cross } from "./Svg";
 import { UserPic } from "./UserPic";
 export const User = () => {
   const [tab, setTab] = useState(2);
@@ -39,7 +40,11 @@ export const User = () => {
       ],
     },
   };
-  const [columns, setColumns] = useState(mock);
+  var store = require("store");
+  const dataTable = store.get("table");
+
+  const [title, setTitle] = useState("");
+  const [columns, setColumns] = useState({});
   const onDragEnd = ({ source, destination }: DropResult) => {
     // Make sure we have a valid destination
     if (destination === undefined || destination === null) return null;
@@ -113,8 +118,77 @@ export const User = () => {
       return null;
     }
   };
+  const [modal, setModal] = useState(false);
+  useEffect(() => {
+    setColumns(dataTable.data);
+  }, []);
   return (
     <div className={styles.root}>
+      {modal && (
+        <div
+          style={{
+            position: "absolute",
+            zIndex: "9999",
+            left: "0px",
+            top: "0px",
+            height: "100vh",
+            width: "100vw",
+            background: "rgba(0, 0, 0, 0.6)",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              width: "425px",
+              height: "412px",
+              background: "#FFFFFF",
+              boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.16)",
+              borderRadius: "8px",
+              padding: 32,
+              display: "flex",
+              gap: 16,
+              flexDirection: "column",
+            }}
+          >
+            <div>
+              <div className={styles.headModal}>
+                <div>Добавление задачи</div>
+                <div>
+                  <Cross />
+                </div>
+              </div>
+            </div>
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Заголовок"
+              className={styles.inputModal}
+            />
+            <textarea
+              style={{ height: "136px" }}
+              placeholder="Описание"
+              className={styles.inputModal}
+            />
+            <button
+              onClick={() => {
+                if (title.trim()) {
+                  dataTable.data.todo.list.push(title);
+                  // @ts-ignore
+                  columns.todo.list.push(title);
+                  store.set("table", { data: { ...dataTable.data } });
+                }
+                setModal(false);
+              }}
+              className={styles.buttonModal}
+            >
+              Создать
+            </button>
+          </div>
+        </div>
+      )}
       <div style={{ display: "flex", alignItems: "center" }}>
         <ArrowBack color="black" />
         Обратно к сотрудникам
@@ -203,12 +277,39 @@ export const User = () => {
         </div>
         <div style={{ display: "flex" }}>
           <DragDropContext onDragEnd={onDragEnd}>
-            {Object.values(columns).map((col) => (
+            {Object.values(columns).map((col: any) => (
               <div
                 key={col.id}
                 style={{ display: "flex", flex: "1", flexDirection: "column" }}
               >
-                <div className={styles.headTable}>{col.id}</div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginRight: "18px",
+                  }}
+                  className={styles.headTable}
+                >
+                  {col.id}
+                  {col.id === "Назначены" && (
+                    <div
+                      style={{
+                        fontFamily: "'Inter'",
+                        fontStyle: "normal",
+                        fontWeight: "500",
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        textAlign: "right",
+                        color: "#8C64D8",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => setModal(true)}
+                    >
+                      Добавить задачу
+                    </div>
+                  )}
+                </div>
                 <Column id={col.id} col={col} label={col.label} />
               </div>
             ))}

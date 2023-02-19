@@ -5,12 +5,55 @@ import { Wrapper } from "../src/components/pages/MainContent/MainContent";
 import Head from "next/head";
 import favico from "../public/images/favicon.ico";
 import { WrapperHr } from "../src/components/hr/MainContent/MainContent";
+import { useEffect } from "react";
+var store = require("store");
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const tableData = store.get("table");
   const isWrapper =
     router.asPath !== "/" &&
     router.asPath !== "/select-hero" &&
     router.asPath.indexOf("/hr") === -1;
+
+  useEffect(() => {
+    if (!tableData) {
+      store.set("table", {
+        data: {
+          todo: {
+            label: "todo",
+            id: "Назначены",
+            list: [
+              "Найти офис",
+              "Получить пропуск",
+              "Познакомиться с ментором",
+              "Посетить экскурсию по офису",
+            ],
+          },
+          inprogess: {
+            label: "inprogess",
+            id: "В процессе",
+            list: [
+              "Указать пожелания к рабочему месту",
+              "Сдать тест профессиональный",
+            ],
+          },
+          approved: {
+            label: "approved",
+            id: "Проверка",
+            list: [],
+          },
+          completed: {
+            label: "completed",
+            id: "Выполнено",
+            list: [
+              "Знакомство с корпоративной культурой",
+              "Изучение первых документов",
+            ],
+          },
+        },
+      });
+    }
+  });
   return (
     <div
       style={{

@@ -10,7 +10,7 @@ export const Column = ({ col: { list, id, label } }: any) => {
           {...provided.droppableProps}
           ref={provided.innerRef}
         >
-          {list.map((text: string, index: number) => (
+          {list?.map?.((text: string, index: number) => (
             <Fulled key={text} text={text} index={index} />
           ))}
         </div>
